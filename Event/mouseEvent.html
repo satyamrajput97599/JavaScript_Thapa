@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .addTransition4 {
+            transform: translate(30rem, 0);
+        }
+
+        .addTransition5 {
+            transform: translate(-30rem, 0);
+        }
+
+        .addTransition6 {
+            border-radius: 0%;
+            background-color: #f5ee62;
+            transform: translate(0rem, 0);
+        }
+
+        .rectangle {
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+            transition: all 0.5s ease;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <div class="rectangle"></div>
+        <button id="myButton">Click me</button>
+    </section>
+
+    <script>
+        // Get the button element by its ID
+        let myButton = document.getElementById("myButton");
+        let rectDiv = document.querySelector(".rectangle");
+
+        const handleMouseEvents = () => {
+            console.log("click");
+            rectDiv.style.backgroundColor = "#f5ee62";
+        };
+
+        const handleMouseEvents2 = () => {
+            console.log("dblclick");
+            rectDiv.style.backgroundColor = "#f5ee62";
+        };
+
+        const handleMouseEvents3 = () => {
+            rectDiv.classList.add("addTransition3");
+        }
+
+        const handleMouseEvents4 = () => {
+            rectDiv.classList.add("addTransition4");
+        };
+
+        const handleMouseEvents5 = () => {
+            rectDiv.classList.add("addTransition5");
+        }
+
+        const handleMouseEvents6 = () => {
+            rectDiv.classList.add("addTransition6");
+        }
+
+        myButton.addEventListener("click", handleMouseEvents);
+        myButton.addEventListener("dblclick", handleMouseEvents2);
+        myButton.addEventListener("mouseover", handleMouseEvents3);
+        myButton.addEventListener("mouseout", handleMouseEvents4);
+        myButton.addEventListener("mousedown", handleMouseEvents5);
+        myButton.addEventListener("mouseup", handleMouseEvents6);
+    </script>
+</body>
+</html>
